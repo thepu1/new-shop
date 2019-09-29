@@ -48,9 +48,4 @@
                                 });
 
 
-                        $('.close3').on('click', function(c){
-                            $('.cart-header3').fadeOut('slow', function(c){
-                                $('.cart-header3').remove();
-                            });
-                        });
-                  
+                    
