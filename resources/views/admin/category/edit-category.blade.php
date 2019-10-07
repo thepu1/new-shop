@@ -17,6 +17,7 @@
                                 <label for="category_name" class="col-md-3">Category Name :</label>
                                 <div class="col-md-9">
                                     <input type="text" class="form-control" name="category_name" id="category_name" value="{{$category->category_name}}">
+                                    <span class="text-center text-danger">{{$errors->has('category_name') ? $errors->first('category_name') : ''}}</span>
                                     <input type="hidden" class="form-control" name="id" id="category_name" value="{{$category->id}}">
                                 </div>
                             </div>
@@ -25,6 +26,7 @@
                                 <label for="category_description" class="col-md-3">Category Description :</label>
                                 <div class="col-md-9">
                                     <input type="text" class="form-control" name="category_description" id="category_description" value="{{$category->category_description}}">
+                                    <span class="text-center text-danger">{{$errors->has('category_description') ? $errors->first('category_description') : ''}}</span>
                                 </div>
                             </div>
 

@@ -1,3 +1,4 @@
+
 <div class="header">
     <div class="header-top">
         <div class="container">
@@ -33,81 +34,9 @@
                         </div>
                         <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
                             <ul class="nav navbar-nav">
-                                <li class="active"><a href="{{route('/')}}" class="act">Home</a></li>
-                                <!-- Mega Menu -->
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Women<b class="caret"></b></a>
-                                    <ul class="dropdown-menu multi-column columns-3">
-                                        <div class="row">
-                                            <div class="col-sm-3  multi-gd-img">
-                                                <ul class="multi-column-dropdown">
-                                                    <h6>Submenu1</h6>
-                                                    <li><a href="{{route('category-product')}}">Clothing</a></li>
-                                                    <li><a href="products.html">Wallets</a></li>
-                                                    <li><a href="products.html">Shoes</a></li>
-                                                    <li><a href="products.html">Watches</a></li>
-                                                    <li><a href="products.html"> Underwear </a></li>
-                                                    <li><a href="products.html">Accessories</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-sm-3  multi-gd-img">
-                                                <ul class="multi-column-dropdown">
-                                                    <h6>Submenu2</h6>
-                                                    <li><a href="products.html">Sunglasses</a></li>
-                                                    <li><a href="products.html">Wallets,Bags</a></li>
-                                                    <li><a href="products.html">Footwear</a></li>
-                                                    <li><a href="products.html">Watches</a></li>
-                                                    <li><a href="products.html">Accessories</a></li>
-                                                    <li><a href="products.html">Jewellery</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-sm-3  multi-gd-img">
-                                                <a href="products.html"><img src="{{asset('/')}}front/assets/images/woo.jpg" alt=" "/></a>
-                                            </div>
-                                            <div class="col-sm-3  multi-gd-img">
-                                                <a href="products.html"><img src="{{asset('/')}}front/assets/images/woo1.jpg" alt=" "/></a>
-                                            </div>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                    </ul>
-                                </li>
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Men <b class="caret"></b></a>
-                                    <ul class="dropdown-menu multi-column columns-3">
-                                        <div class="row">
-                                            <div class="col-sm-3  multi-gd-img">
-                                                <ul class="multi-column-dropdown">
-                                                    <h6>Submenu1</h6>
-                                                    <li><a href="products.html">Clothing</a></li>
-                                                    <li><a href="products.html">Wallets</a></li>
-                                                    <li><a href="products.html">Shoes</a></li>
-                                                    <li><a href="products.html">Watches</a></li>
-                                                    <li><a href="products.html"> Underwear </a></li>
-                                                    <li><a href="products.html">Accessories</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-sm-3  multi-gd-img">
-                                                <ul class="multi-column-dropdown">
-                                                    <h6>Submenu2</h6>
-                                                    <li><a href="products.html">Sunglasses</a></li>
-                                                    <li><a href="products.html">Wallets,Bags</a></li>
-                                                    <li><a href="products.html">Footwear</a></li>
-                                                    <li><a href="products.html">Watches</a></li>
-                                                    <li><a href="products.html">Accessories</a></li>
-                                                    <li><a href="products.html">Jewellery</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-sm-3  multi-gd-img">
-                                                <a href="products1.html"><img src="{{asset('/')}}front/assets/images/woo3.jpg" alt=" "/></a>
-                                            </div>
-                                            <div class="col-sm-3  multi-gd-img">
-                                                <a href="products1.html"><img src="{{asset('/')}}front/assets/images/woo4.jpg" alt=" "/></a>
-                                            </div>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                    </ul>
-                                </li>
-                                <li><a href="codes.html">Short Codes</a></li>
+                                @foreach($categories as $category)
+                                <li class="active"><a href="{{route('category-product',$category->id)}}" class="act">{{$category->category_name}}</a></li>
+                                @endforeach
                                 <li><a href="{{route('mail-us')}}">Mail Us</a></li>
                             </ul>
                         </div>
@@ -125,17 +54,17 @@
                 </div>
                 <div class="header-right2">
                     <div class="cart box_1">
-                        <a href="checkout.html">
+                        <a href="{{route('show-cart')}}">
                             <h3> <div class="total">
-                                    <span class="simpleCart_total"></span> (<span id="simpleCart_quantity" class="simpleCart_quantity"></span> items)</div>
+                                    <span class="cart-count" id="cart_count">{{$cart_count}} </span></div>
                                 <img src="{{asset('/')}}front/assets/images/bag.png" alt="" />
                             </h3>
                         </a>
-                        <p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p>
-                        <div class="clearfix"> </div>
+                        <p><a href="javascript:;" class="simpleCart_empty"></a></p>
+                        <div class="clearfix"></div>
                     </div>
                 </div>
-                <div class="clearfix"> </div>
+                <div class="clearfix"></div>
             </div>
         </div>
     </div>

@@ -34,12 +34,12 @@
                                         <td>{{$category->publication_status == 1 ? 'Published' : 'Unpublished'}}</td>
                                         <td>
                                             @if($category->publication_status == 1)
-                                            <a href="{{route('published',$category->id)}}" class="btn btn-info">
+                                            <a href="{{route('published-category',$category->id)}}" class="btn btn-info">
                                                 <i class="fas fa-arrow-up"></i>
                                             </a>
 
                                             @else
-                                                <a href="{{route('unpublished',$category->id)}}" class="btn btn-warning">
+                                                <a href="{{route('unpublished-category',$category->id)}}" class="btn btn-warning">
                                                     <i class="fas fa-arrow-down"></i>
                                                 </a>
                                             @endif

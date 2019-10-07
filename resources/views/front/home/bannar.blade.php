@@ -3,18 +3,11 @@
         <div id="example1" class="core-slider core-slider__carousel example_1">
             <div class="core-slider_viewport">
                 <div class="core-slider_list">
+                    @foreach($slides as $slide)
                     <div class="core-slider_item">
-                        <img src="{{asset('/')}}front/assets/images/b1.jpg" class="img-responsive" alt="">
+                        <img src="{{asset($slide->slide_image )}}" class="img-responsive" alt="">
                     </div>
-                    <div class="core-slider_item">
-                        <img src="{{asset('/')}}front/assets/images/b2.jpg" class="img-responsive" alt="">
-                    </div>
-                    <div class="core-slider_item">
-                        <img src="{{asset('/')}}front/assets/images/b3.jpg" class="img-responsive" alt="">
-                    </div>
-                    <div class="core-slider_item">
-                        <img src="{{asset('/')}}front/assets/images/b4.jpg" class="img-responsive" alt="">
-                    </div>
+                        @endforeach
                 </div>
             </div>
             <div class="core-slider_nav">

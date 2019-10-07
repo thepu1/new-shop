@@ -13,7 +13,7 @@ class CategoryController extends Controller
 
     protected function categoryValidation(Request $request){
         $this->validate($request,[
-            'category_name' => 'required',
+            'category_name' => 'required|unique:categories',
             'category_description' => 'required',
             'publication_status' => 'required'
         ]);
@@ -41,6 +41,7 @@ class CategoryController extends Controller
     }
 
     public function updateCategory(Request $request){
+        $this->categoryValidation($request);
        Category::updateCategoryInfo($request);
        return redirect('/category/manage-category')->with('message','Category Update Successfully');
     }
