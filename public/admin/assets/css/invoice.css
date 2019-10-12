@@ -1,0 +1,209 @@
+    body{
+            padding: 0;
+            margin: 0;
+            color: #898996;
+            font-family: sans-serif;
+            font-style: normal;
+            font-weight: 500;
+        }
+        .top-invoice{
+            width: 800px;
+            text-align: center;
+            background: #5A5C69;
+            height: 40px;
+            margin-top:-45px; 
+            margin-left: -50px;
+        }
+      
+        .top-invoice h6{
+            margin-top:0px;
+            color: #fff;
+            font-size: 18px;
+            padding-top: 7px;
+            letter-spacing: 10px;
+            text-align: center;
+            margin-left: 50px;
+        }
+
+        .new-shop{
+            display: inline;
+            float: left;
+            width: 33%;
+            text-align: center;
+        }
+        .new-shop h1{
+            border-bottom: 2px solid #36B9CC;
+            color: #36B9CC;
+            font-family: sans-serif;
+            font-weight: 700;
+            font-size: 40px;
+        }
+        .new-shop h1 span{
+            color: #E74A3B;
+        }
+        .new-shop h5{
+            font-size: 15px;
+            margin-top: -15px;
+        }
+        .invoice{
+            margin-top: 45px;
+        }
+        .table{
+            margin-top: 13px;
+            width: 400px;
+            border-collapse: collapse;
+            text-align: center;
+            margin-left:220px;
+            width: 625px;
+
+        }
+
+        .table th{
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        .table td{
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        .table th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #36B9CC;
+            color: white;
+            text-align: center;
+        }
+
+        .shipping{
+            display: inline;
+        }
+        .shipping h4{
+            color: #36B9CC;
+            width: 300px;
+            margin-top: 100px;
+            text-align: center;
+        }
+        .shipping-table{
+            border-collapse: collapse;
+            text-align: center;
+            margin-left:0px;
+            width:300px;
+
+        }
+
+        .shipping-table th{
+            border-top: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        .shipping-table td{
+            border-top: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        .shipping-table th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            text-align: center;
+        }
+
+        .billing{
+            display: inline;
+        }
+        .billing h4{
+            color: #36B9CC;
+            margin-left: 300px;
+            width: 500px;
+            margin-top:-170px;
+            text-align: center;
+            float: right;
+        }
+        .billing-table{
+            margin-top:-133px;
+            border-collapse: collapse;
+            text-align: center;
+            margin-left:300px;
+            width:600px;
+
+        }
+
+        .billing-table th{
+            border-top: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        .billing-table td{
+            border-top: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        .billing-table th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            text-align: center;
+        }
+
+        .product{
+            display: inline;
+        }
+        .product-table{
+            margin-top:70px;
+            border-collapse: collapse;
+            text-align: center;
+            margin-left:0px;
+            width:100%;
+
+        }
+
+        .product-table th{
+            border: 1px solid #ddd;
+            padding: 8px;
+            background: #36B9CC;
+            color: #fff;
+        }
+
+        .product-table td{
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        .product-table th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            text-align: center;
+        }
+
+        .total{
+            display: inline;
+        }
+        .total-table{
+            margin-top:50px;
+            border-collapse: collapse;
+            text-align: center;
+            margin-left:300px;
+            width:600px;
+
+        }
+
+        .total-table th{
+            border-top: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        .total-table td{
+            border-top: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        .total-table th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            text-align: center;
+        }

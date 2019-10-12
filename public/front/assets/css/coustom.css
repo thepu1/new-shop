@@ -1,10 +1,9 @@
-form {
-  width: 300px;
-  margin: 0 auto;
-  text-align: center;
-  padding-top: 50px;
-}
-
+/* form {
+        width: 300;
+        margin: 0 auto;
+        text-align: center;
+        padding-top: 0;
+    }*/
 .value-button {
     display: inline-block;
     border: 0px solid #ddd;

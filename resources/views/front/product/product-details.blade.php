@@ -4,6 +4,14 @@
     @endsection
 
 @section('body')
+    <style>
+        form {
+            width: 300px;
+            margin: 0 auto;
+            text-align: center;
+            padding-top: 0;
+        }
+    </style>
     <div class="banner1">
         <div class="container">
             <h3><a href="index.html">Home</a> / <span>Single</span></h3>

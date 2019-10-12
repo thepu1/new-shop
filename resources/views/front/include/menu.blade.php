@@ -1,4 +1,11 @@
-
+<style>
+    form {
+        width: 0;
+        margin: 0 auto;
+        text-align: center;
+        padding-top: 0;
+    }
+</style>
 <div class="header">
     <div class="header-top">
         <div class="container">
@@ -7,9 +14,27 @@
             </div>
             <div class="top-right">
                 <ul>
-                    <li><a href="{{route('check-out')}}">Checkout</a></li>
-                    <li><a href="login.html">Login</a></li>
-                    <li><a href="registered.html"> Create Account </a></li>
+                    <li>
+                        @if($cart_count && Session::get('coustomerId'))
+                            <a href="{{route('checkout-shipping')}}">Check Out</a>
+                    @elseif($cart_count)
+                        <a href="{{route('check-out')}}">Check Out</a>
+                    @endif
+
+                    @if(Session::get('coustomerId'))
+                        <li><a href="#">{{Session::get('coustomerName')}}</a></li>
+                    <li><a href="{{route('check-out')}}" onclick="event.preventDefault();document.getElementById('logoutForm').submit();">
+                            <form id="logoutForm" action="{{route('coustomer-logout')}}" method="post">
+                                @csrf
+                            </form>
+
+                            Logout
+                        </a></li>
+                    @else
+                        <li><a href="{{route('coustomer-login')}}">Customer Login</a></li>
+                        <li><a href="{{route('coustomer-sign-up')}}">Customer Sign-up</a></li>
+                    @endif
+
                 </ul>
             </div>
             <div class="clearfix"></div>

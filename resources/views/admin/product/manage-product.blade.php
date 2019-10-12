@@ -36,7 +36,7 @@
                                 <td>{{$product->category_name}}</td>
                                 <td>{{$product->brand_name}}</td>
                                 <td>{{$product->product_name}}</td>
-                                <td><img src="{{asset($product->product_image)}}" alt="" width="150" height="100"></td>
+                                <td><img src="{{asset($product->product_image)}}" alt="" width="60" height="40"></td>
                                 <td>{{$product->product_price}}</td>
                                 <td>{{$product->product_quantity}}</td>
                                 <td>{{$product->publication_status == 1 ? 'Published' : 'Unpublished'}}</td>
@@ -75,22 +75,6 @@
         </div>
 
     </div>
-    <!-- /.container-fluid -->
-
-    </div>
-    <!-- End of Main Content -->
-
-    <!-- Footer -->
-
-    <!-- End of Footer -->
-
-    </div>
-    <!-- End of Content Wrapper -->
-
-    </div>
-    <!-- End of Page Wrapper -->
-
-    <!-- Scroll to Top Button-->
 
 
 

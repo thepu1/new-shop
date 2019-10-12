@@ -29,6 +29,12 @@
             text-align: center;
             background: #eee;
         }
+        form {
+            width: 0;
+            margin: 0 auto;
+            text-align: center;
+            padding-top: 0;
+        }
     </style>
     <div class="banner1">
         <div class="container">
@@ -61,7 +67,7 @@
                             @php($i=1)
                             @php($sum =0)
                             @foreach($cartProducts as $cartProduct)
-                            <tr>
+                            <tr id="tr{{$cartProduct->rowId}}">
                                 <td>{{$i++}}</td>
                                 <td>{{$cartProduct->name}}</td>
                                 <td><img src="{{asset($cartProduct->options->image)}}" width="80" height="60" alt=""></td>
@@ -135,6 +141,23 @@
                                     <a href="{{route('delete-cart-item',$cartProduct->rowId)}}" class="deleteRecord">
 
                                         <span class="glyphicon glyphicon-trash text-danger"></span>
+                                        {{--<input type="button" id="delete{{$cartProduct->rowId}}" value="delete">--}}
+                                        {{--<input type="hidden" id="deleteRowId{{$cartProduct->rowId}}" value="{{$cartProduct->rowId}}" name="rowId">--}}
+
+                                        {{--<script>--}}
+                                            {{--var delete_btn = document.getElementById('delete'+'{{$cartProduct->rowId}}');--}}
+                                            {{--delete_btn.onclick = function () {--}}
+                                                {{--var rowId = document.getElementById('deleteRowId'+'{{$cartProduct->rowId}}').value;--}}
+                                                {{--$.ajax({--}}
+
+                                                    {{--url: 'http://localhost:8076/new-shop/public/cart/delete-cart-item/'+rowId,--}}
+                                                    {{--method: 'get',--}}
+                                                    {{--success:function (data) {--}}
+                                                        {{--document.getElementById('tr'+'{{$cartProduct->rowId}}').remove(data);--}}
+                                                    {{--}--}}
+                                                {{--})--}}
+                                            {{--}--}}
+                                        {{--</script>--}}
 
                                     </a>
                                 </td>
@@ -153,21 +176,33 @@
                             <tr>
                                 <th class="text-right">Total (TK.)</th>
                                 {{--<td id="grandtotal">{{$sum}}.00</td>--}}
-                                <td id="grandtotal">{{$total}}</td>
+                                <td id="grandtotal">{{$total}}
+                                </td>
                             </tr>
 
                         </table>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-2">
-                        <a class="btn btn-success btn-block" href="{{route('/')}}">Continue Shopping</a>
+            @if($cart_count >0)
+                    <div class="row">
+                        <div class="col-md-2">
+                            <a class="btn btn-success btn-block" href="{{route('/')}}">Continue Shopping</a>
+                        </div>
+                        <div class="col-md-offset-8 col-md-2">
+                            @if(Session::get('coustomerId') && Session::get('shippingId'))
+
+                                <a class="btn btn-success btn-block" href="{{route('checkout-payment')}}">Check Out</a>
+
+                                @elseif(Session::get('coustomerId'))
+                                <a class="btn btn-success btn-block" href="{{route('checkout-shipping')}}">Check Out</a>
+                            @else
+                                <a class="btn btn-success btn-block" href="{{route('check-out')}}">Check Out</a>
+                            @endif
+                        </div>
                     </div>
-                    <div class="col-md-offset-8 col-md-2">
-                        <a class="btn btn-success btn-block" href="{{route('check-out')}}">Check Out</a>
-                    </div>
-                </div>
             </div>
+            @else
+                @endif
         </div>
     </div>
 @endsection

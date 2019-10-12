@@ -55,7 +55,7 @@ class CartController extends Controller
 //    }
 
     public function deleteCartItem($rowId){
-        Cart::remove($rowId);
+        $cart = Cart::remove($rowId);
         return redirect('/cart/show-cart');
     }
 
@@ -73,7 +73,4 @@ class CartController extends Controller
              ];
     }
 
-    public function countCartItem(){
-       return Cart::total();
-    }
 }
